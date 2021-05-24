@@ -1,0 +1,62 @@
+[
+  {
+    "id": "battlenet",
+    "title": "Blizzard",
+    "color": "#00cbe6"
+  },
+  {
+    "id": "epic",
+    "title": "Epic Game Store",
+    "color": "#0078f2"
+  },
+  {
+    "id": "bundlestars",
+    "title": "Fanatical",
+    "color": "#ff9800"
+  },
+  {
+    "id": "gog",
+    "title": "GOG",
+    "color": "#f16421"
+  },
+  {
+    "id": "gamersgate",
+    "title": "GamersGate",
+    "color": "#fc5d5d"
+  },
+  {
+    "id": "greenmangaming",
+    "title": "GreenManGaming",
+    "color": "#21a930"
+  },
+  {
+    "id": "humblestore",
+    "title": "Humble Store",
+    "color": "#ff3e1b"
+  },
+  {
+    "id": "humblewidgets",
+    "title": "Humble Widgets",
+    "color": "#f8300c"
+  },
+  {
+    "id": "microsoft",
+    "title": "Microsoft Store",
+    "color": "#ffd800"
+  },
+  {
+    "id": "origin",
+    "title": "Origin",
+    "color": "#ddff1c"
+  },
+  {
+    "id": "steam",
+    "title": "Steam",
+    "color": "#9ffc3a"
+  },
+  {
+    "id": "uplay",
+    "title": "Uplay",
+    "color": "#01657a"
+  }
+]
