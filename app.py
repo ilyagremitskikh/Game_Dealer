@@ -15,7 +15,7 @@ from utils.db_api.models import shop
 
 
 def schedule_jobs():
-    scheduler.add_job(update_and_notify, "interval", minutes=5, args=(db.pool,))
+    scheduler.add_job(update_and_notify, "interval", hours=6, args=(db.pool,))
 
 async def update_and_notify(pool):
     await update_deals_for_user_games(pool)
