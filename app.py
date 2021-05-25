@@ -15,7 +15,7 @@ from utils.db_api.models import shop
 
 
 def schedule_jobs():
-    scheduler.add_job(update_deals_for_user_games, "interval", hours=3, args=(db.pool,))
+    scheduler.add_job(update_deals_for_user_games, "interval", hours=1, args=(db.pool,))
 
 
 async def on_startup(dispatcher):
