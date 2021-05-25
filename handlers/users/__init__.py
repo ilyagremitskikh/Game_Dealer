@@ -7,4 +7,4 @@ from . import wishlist_link
 from . import game_link
 from . import games
 from . import deals
-from . import echo
+# from . import echo

@@ -17,7 +17,8 @@ async def send_games_edit(message: types.Message):
     games_exist = await user_game.check_exist(db.pool, user_id=user_id)
     if games_exist == 0:
         await message.answer("Вы пока не добавили ни одной игры для отслеживания. Используйте команду /help, чтобы "
-                             "узнать о способах добавления игр в свой список")
+                             "узнать о способах добавления игр в свой список. Или можете просто добавить игры в свой "
+                             "список с помощью поиска @GameDealerBot")
     else:
         users_games = await user_game.get_users(db.pool, user_id=user_id)
         keyboard = await users_games_keyboard.create_keyboard(users_games)
