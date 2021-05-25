@@ -1,7 +1,7 @@
 import json
 import logging
 
-from utils.misc.functions import update_deals_for_user_games
+from utils.misc.functions import update_deals_for_user_games, notify_about_deals
 
 logger = logging.getLogger(__name__)
 
@@ -15,8 +15,11 @@ from utils.db_api.models import shop
 
 
 def schedule_jobs():
-    scheduler.add_job(update_deals_for_user_games, "interval", hours=1, args=(db.pool,))
+    scheduler.add_job(update_and_notify, "interval", minutes=5, args=(db.pool,))
 
+async def update_and_notify(pool):
+    await update_deals_for_user_games(pool)
+    await notify_about_deals(pool)
 
 async def on_startup(dispatcher):
     # Устанавливаем дефолтные команды
@@ -37,9 +40,6 @@ async def on_startup(dispatcher):
     # Уведомляет про запуск
     await on_startup_notify(dispatcher)
 
-    # Обновляем список скидок на игры
-    await update_deals_for_user_games(db.pool)
-
     # Запускаем повторяющиеся задачи
     schedule_jobs()
 
@@ -50,4 +50,3 @@ if __name__ == '__main__':
                         datefmt='%d/%m/%y %H:%M:%S')
     scheduler.start()
     executor.start_polling(dp, on_startup=on_startup)
-

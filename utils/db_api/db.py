@@ -91,7 +91,8 @@ class Database:
         price_old real,
         price_cut real,
         url varchar (255),
-        was_sent bool default false,
+        is_new bool default true,
+        added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (game_id, shop_id),
         FOREIGN KEY (game_id) REFERENCES Games(game_id),
         FOREIGN KEY (shop_id) REFERENCES Shops(id)

@@ -12,3 +12,4 @@ api = Itad(api_key=config.ITAD_API_KEY)
 db = Database()
 dp = Dispatcher(bot, storage=storage)
 scheduler = AsyncIOScheduler()
+

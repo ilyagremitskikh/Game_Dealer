@@ -46,3 +46,9 @@ async def check_exist(pool: asyncpg.pool.Pool, user_id):
         SELECT COUNT(1) FROM users_games WHERE user_id = $1 
     """
     return await pool.fetchval(sql, user_id)
+
+async def get_users_with_game(pool: asyncpg.pool.Pool, game_id: str):
+    sql = """
+        SELECT user_id from users_games WHERE game_id = $1
+    """
+    return await pool.fetch(sql, game_id)
