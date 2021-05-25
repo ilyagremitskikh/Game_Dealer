@@ -1,9 +1,6 @@
 import logging
-import datetime
-from datetime import timezone
 
 import asyncpg
-from aiogram import Dispatcher
 from aiogram.utils.emoji import emojize
 from aiogram_broadcaster import TextBroadcaster
 
